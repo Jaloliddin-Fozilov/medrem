@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'provider/categories_provider.dart';
 import 'provider/dieases_provider.dart';
@@ -8,6 +9,8 @@ import 'screens/home_page.dart';
 import 'services/theme.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
@@ -16,6 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<NotificationsProvider>(

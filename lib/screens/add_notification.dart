@@ -240,6 +240,7 @@ class _AddNotificationState extends State<AddNotification> {
                     );
                   },
                 ),
+                const SizedBox(height: 10),
                 CustomButton(
                   title: 'Yana eslatma vaqti qo’shish',
                   onPressed: () => _addTime(),
